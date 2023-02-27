@@ -7,7 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="program-2.asm">
+    <MASM Include="template.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
