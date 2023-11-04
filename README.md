@@ -1,0 +1,1 @@
+This is a blank Visual Studio solution and project for a 64-bit assembly program.

@@ -1,22 +1,20 @@
 extrn ExitProcess : proc        ; Declare external function ExitProcess
 
-.DATA                           ; Directive: enter .data section
+.DATA                           ; Directive; Enter .data section
 
-; Data here
+.CODE                           ; Directive: Enter .code section
 
-.CODE                           ; Directive: enter .code section
-
-_main PROC                      ; Directive: Begin function labeled `_main`
+main PROC                       ; Directive: Begin function labeled `main`
 
     sub rsp, 28h                ; Bump 8 bytes to ensure 16 byte alignment. Reserve 32 bytes shadow space.
-    ; ----------------------------------------
+    ; -------------------- /\ PROLOGUE /\ --------------------
 
-    ; Code here
 
-    ; ----------------------------------------
+
+    ; -------------------- \/ EPILOGUE \/ --------------------
     xor rcx, rcx                ; Clear RCX
     call ExitProcess            ; Use Windows API to exit the process
 
-_main ENDP                      ; Directive: End function labeled `_main`
+main ENDP                       ; Directive: End function labeled `main`
 
-END                             ; Directive: End of module
+END
